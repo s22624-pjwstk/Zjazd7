@@ -34,9 +34,16 @@ for x in names:
 print("--------------------")
 for x in people:
     print(x)
-
+print("_-----------------------------")
 #zad8
-#def create_person(name,surname):
+def create_person(names,surnames):
+    x=random.randint(0,len(names)-1)
+    random_name=names[x]
+    y=random.randint(0,len(surnames)-1)
+    random_surname=surnames[y]
+    return "{} {}".format(random_name,random_surname)
+
+print(create_person(names,surnames))
 
 
 #zad9
