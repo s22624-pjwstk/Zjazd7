@@ -27,8 +27,9 @@ for x in surnames:
 people=[]
 for x in names:
     for z in surnames:
-        if x[-1]=="a" and z!="Karasiewicz":
-            people.append(x+" "+z+"a")
+        if x[-1]=="a" and looks_like_polish_surname(z):
+            v=z[:-1]
+            people.append(x+" "+v+"a")
         else:
             people.append(x+" "+z)
 print("--------------------")
@@ -40,7 +41,7 @@ def create_person(names,surnames):
     x=random.randint(0,len(names)-1)
     random_name=names[x]
     y=random.randint(0,len(surnames)-1)
-    random_surname=surnames[y]
+    random_surname=list(surnames)[y]
     return "{} {}".format(random_name,random_surname)
 
 print(create_person(names,surnames))
